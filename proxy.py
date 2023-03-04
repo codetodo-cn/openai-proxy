@@ -2,6 +2,7 @@
 
 """
 Proxy api.openai.com and returns them (Flask)
+reference to https://github.com/acheong08/ChatGPT-Proxy/blob/main/proxy.py
 """
 
 import requests
