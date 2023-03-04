@@ -14,6 +14,16 @@ services:
       - .:/www/server:delegated
       - ${OPENAI_PROXY_ROOT_DIR:-.}/volumes/vscode-extensions:/www/.vscode-server:delegated
 
+  redis:
+    container_name: openai-proxy-redis
+    image: bitnami/redis:latest
+    ports:
+      - 6379:6379
+    volumes:
+      - ${OPENAI_PROXY_ROOT_DIR:-.}/volumes/redis/data:/bitnami/redis/data
+    environment:
+      REDIS_PASSWORD: 123456
+
 networks:
   default:
     name: openai_proxy_dev
