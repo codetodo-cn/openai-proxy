@@ -1,2 +1,4 @@
 flask==2.2.3
 requests==2.27.1
+uvicorn==0.17.6
+asgiref==3.5.0
