@@ -15,6 +15,7 @@ services:
       - ${OPENAI_PROXY_ROOT_DIR:-.}/volumes/vscode-extensions:/www/.vscode-server:delegated
     depends_on:
       - redis
+  
   redis:
     container_name: openai-proxy-redis
     image: bitnami/redis:latest
