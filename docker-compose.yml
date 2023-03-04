@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+  openai-proxy:
+    container_name: openai-proxy
+    image: liyaodev/openai-proxy-env:v1.0.0
+    # 本地构建
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/www/server:delegated
+      - ${OPENAI_PROXY_ROOT_DIR:-.}/volumes/vscode-extensions:/www/.vscode-server:delegated
+
+networks:
+  default:
+    name: openai_proxy_dev
